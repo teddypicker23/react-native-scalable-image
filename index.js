@@ -33,7 +33,7 @@ export default class ScalableImage extends React.Component {
     onProps(props) {
         if (props.source.uri) {
             const source = props.source.uri ? props.source.uri : props.source;
-            Image.getSize(source, (width, height) => this.adjustSize(width, height, props), console.log);
+            Image.getSize(source, (width, height) => this.adjustSize(width, height, props), props.onError);
         }
         else {
             const source = resolveAssetSource(props.source);
